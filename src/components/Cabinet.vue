@@ -1,10 +1,12 @@
 <template>
-  <div>
-<div v-for="item in insuranceTypes" v-bind:key="item._id">
-<img v-bind:src="item.img"/>
-  <h1>{{ item.title }}</h1>
-  <p>{{ item.description }}</p>
-</div>
+<div>
+  <div class="main-base">
+    <div v-for="item in insuranceTypes" v-bind:key="item._id" v-bind:class="{ 'selected': active, 'Rectangle-13': origin }" v-on:click="isActive">
+      <img v-bind:src=" item.img " />
+      <p class='layer'>{{ item.title }}</p>
+      <p>{{ item.description }}</p>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -13,6 +15,8 @@
 export default {
   data() {
     return {
+      active: false,
+      origin: true,
       insuranceTypes: []
     }
   },
@@ -48,18 +52,86 @@ export default {
           }
 
         )
+    },
+    isActive: function(event) {
+      console.log(event.currentTarget)
+      console.log(event.target)
+      this.active = true
     }
   }
-
 }
 </script>
 
 <style scoped>
-font-family: 'Avenir',
-Helvetica,
-Arial,
-sans-serif;
-text-align: center;
-color: #2c3e50;
-margin-top: 60px;
+.main-base {
+  width: 95vw;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.Rectangle-13 {
+  width: 160px;
+  height: 192px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px 0 rgba(89, 159, 246, 0.3);
+  margin: 20px 20px 20px 20px;
+  text-align: center;
+  transition: all 0.5s ease-out 0.5s;
+}
+
+.selected {
+  width: 160px;
+  height: 192px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px 0 rgba(89, 159, 246, 0.6);
+  margin: 20px 20px 20px 20px;
+  text-align: center;
+  transition: all 0.5s ease-out 0.5s;
+}
+
+.Rectangle-13:hover>img {
+  transform: scale(1.2);
+}
+
+img {
+  width: 160px;
+  height: 95px;
+  transition: all 0.5s ease-out 0.5s;
+  transform-origin: 50% 100%;
+}
+
+p.layer {
+  display: inline-block;
+  width: auto;
+  height: 21px;
+  font-family: FiraSans;
+  font-size: 18px;
+  line-height: 1.17;
+  text-align: left;
+  color: #3c3c3c;
+  margin: auto;
+  margin-top: 15px;
+  padding: 0px;
+}
+
+p {
+  display: inline-block;
+  width: 140px;
+  height: 36px;
+  font-family: FiraSans;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  color: #999999;
+  margin: auto;
+  margin-top: 10px;
+  padding: 0px;
+}
 </style>
