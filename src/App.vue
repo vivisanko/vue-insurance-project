@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <router-view/>
-  </div>
+<div>
+  <router-view/>
+</div>
 </template>
 
 <script>
@@ -11,12 +11,16 @@ import Cabinet from './components/Cabinet.vue';
 
 
 export default {
-  components:{
-Registration, Authorization, Cabinet
+  components: {
+    Registration,
+    Authorization,
+    Cabinet
   }
 }
 </script>
 
 <style>
+div {
   margin: 0px;
+}
 </style>

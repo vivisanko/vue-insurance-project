@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="main-base">
-    <div v-for="item in insuranceTypes" v-bind:key="item._id" v-bind:class="{ 'selected': active, 'Rectangle-13': origin }" v-on:click="isActive">
+    <div v-for="item in insuranceTypes" v-bind:key="item._id" v-bind:item="item" v-bind:class="[{selected : selected == 'item'}, usual]" v-on:click="selected = item">
       <img v-bind:src=" item.img " />
       <p class='layer'>{{ item.title }}</p>
       <p>{{ item.description }}</p>
@@ -15,8 +15,8 @@
 export default {
   data() {
     return {
-      active: false,
-      origin: true,
+      selected: 'Rectangle-13-active',
+      usual: 'Rectangle-13',
       insuranceTypes: []
     }
   },
@@ -52,11 +52,6 @@ export default {
           }
 
         )
-    },
-    isActive: function(event) {
-      console.log(event.currentTarget)
-      console.log(event.target)
-      this.active = true
     }
   }
 }
@@ -85,7 +80,7 @@ export default {
   transition: all 0.5s ease-out 0.5s;
 }
 
-.selected {
+.Rectangle-13-active {
   width: 160px;
   height: 192px;
   border-radius: 10px;
@@ -111,7 +106,7 @@ p.layer {
   display: inline-block;
   width: auto;
   height: 21px;
-  font-family: FiraSans;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 18px;
   line-height: 1.17;
   text-align: left;
@@ -125,7 +120,7 @@ p {
   display: inline-block;
   width: 140px;
   height: 36px;
-  font-family: FiraSans;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 12px;
   line-height: 1.5;
   text-align: center;

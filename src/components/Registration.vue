@@ -1,16 +1,18 @@
 <template>
 <div>
   <div>
-    <p>Логин или e-mail</p>
-    <input v-model="email" />
+    <p>Введите логин</p>
+    <input v-model="logon" />
     <p>Придумайте пароль</p>
     <input v-model="passwordOriginal" />
     <p>Повторите пароль</p>
     <input v-model="password" />
     <p>Введите телефон</p>
     <input v-model="phone" />
+    <p>Введите ваш e-mail</p>
+    <input v-model="email" />
     <button v-on:click="doRegistration">Регистрация</button>
-    <button v-on:click="goToAuthorization">У меня есть аккаунт</button>
+    <router-link to="/authorization">У меня есть аккаунт</router-link>
     <p>Единый номер Azur:+375 (29) 123-45-67</p>
   </div>
   <div>
@@ -24,10 +26,11 @@
 export default {
   data() {
     return {
-      email: 'anonim',
+      logon: 'anonim',
       passwordOriginal: 'zzzzzz',
       password: 'zzzzzz',
-      phone: '+375 (29) 111111'
+      phone: '+375 (29) 111111',
+      email: 'anonim@gmail.com',
     }
 
   },
@@ -70,9 +73,6 @@ export default {
         .catch(function genericError(error) {
           console.log(error)
         })
-    },
-    goToAuthorization() {
-      this.$router.push('/authorization')
     }
   }
 }
