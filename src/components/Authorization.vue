@@ -43,7 +43,7 @@
           <h1 class="-A">Добро пожаловать в <span class="-A-azur">Azur</span>.</h1>
           <p class="-B">Для доступа в ваш аккаунт, авторизируйтесь.</p>
           <div class="big_logo_singin">
-            <img src="../assets/big-logo-singin.png" />
+            <img src="big-logo-singin.png" />
           </div>
         </div>
       </div>
