@@ -1,12 +1,12 @@
 <template>
 <div>
 
-  <div class='SingLog-In-Country'>
-    <div class='Rectangle-3'></div>
-    <div class='Rectangle-11'>
+  <div class='main'>
+    <div class='header'></div>
+    <div class='center'>
       <div class="center-left">
-        <div class='Rectangle-left'>
-          <div class="Rectangle-7">
+        <div class='content-left'>
+          <div class="small-logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 20 260 260">
              <g fill="none" fill-rule="nonzero">
         <path fill="#0089f7" fill-opacity=".6" d="M155.774 81.626l-30.182-61.609-87.948 218.287 128.813-58.839-87.496 4.013 76.813-101.852"/>
@@ -22,27 +22,29 @@
         <path fill="#0089f7" fill-opacity=".6" d="M223.827 238.53l-60.31-91.96-4.069-56.635 64.379 148.595"/>
         <path fill="#ffffff" d="M166.174 179.776l-.17-.124.792-.187-.622.311"/></g><text dy=270 dx=60 fill="#949ea6" font-size=40 font-weight=40>A Z U R</text></svg>
           </div>
-          <div>
-            <input class='imickaagmailcom' v-model="email" />
-            <div class="Rectangle-2"></div>
-            <p class="-e-mail">Логин или e-mail</p>
+          <div class='entry-group'>
+            <input class='entry-group-input' v-model="email" />
+            <div class="entry-group-line"></div>
+            <p class="entry-group-text">Логин или e-mail</p>
           </div>
-          <div>
-            <input class='imickaagmailcom pass' v-model="password" />
-            <div class="Rectangle-2"></div>
-            <p class="-e-mail">Пароль</p>
+          <div class='entry-group'>
+            <input class='entry-group-input pass' v-model="password" />
+            <div class="entry-group-line"></div>
+            <p class="entry-group-text">Пароль</p>
+            <button class="button-small">Забыли?</button>
           </div>
-          <button class="layer-small">Забыли?</button>
-          <button class="Rectangle-2-Copy" v-on:click="inGoing">ВОЙТИ</button>
-          <router-link class="layer" to="/registration">Зарегистрироваться</router-link>
-          <p class="-Azur-"><span>Единый номер Azur: </span>+375 (29) 123-45-67</p>
+          <div class="underside">
+            <button class="underside-button-big" v-on:click="inGoing">ВОЙТИ</button>
+            <router-link class="underside-link" to="/registration">Зарегистрироваться</router-link>
+            <p class="underside-Azur"><span>Единый номер Azur: </span>+375 (29) 123-45-67</p>
+          </div>
         </div>
       </div>
       <div class="center-right">
-        <div class="Rectangle">
-          <h1 class="-A">Добро пожаловать в <span class="-A-azur">Azur</span>.</h1>
-          <p class="-B">Для доступа в ваш аккаунт, авторизируйтесь.</p>
-          <div class="big_logo_singin">
+        <div class="content-right">
+          <h1 class="topping-Azur">Добро пожаловать в <span>Azur</span>.</h1>
+          <p class="topping-text">Для доступа в ваш аккаунт, авторизируйтесь.</p>
+          <div class="big-logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260">
     <g fill="none" fill-rule="nonzero">
         <path fill="#FFF" fill-opacity=".6" d="M155.774 81.626l-30.182-61.609-87.948 218.287 128.813-58.839-87.496 4.013 76.813-101.852"/>
@@ -61,6 +63,7 @@
 </svg>
           </div>
         </div>
+        <div class="radius-remove"></div>
       </div>
     </div>
   </div>
@@ -110,8 +113,12 @@ export default {
 </script>
 
 <style scoped>
+@media (min-width:320px) and (max-width:580px) {
 
-.SingLog-In-Country {
+}
+
+
+.main {
   margin: 0px;
   min-height: 809px;
   display: flex;
@@ -121,14 +128,14 @@ export default {
   justify-content: space-between;
 }
 
-.Rectangle-3 {
-  width: 100%;
+.header {
+  width: 100vw;
   margin: 0px;
   height: 108px;
   background-color: rgba(24, 68, 122, 0.5);
 }
 
-.Rectangle-11 {
+.center {
   max-width: 860px;
   min-height: 622px;
   border-radius: 10px;
@@ -137,39 +144,35 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap-reverse;
+  justify-content: center;
 }
 
 .center-left {
-  flex-basis: 50%;
+  flex-basis: calc(50% - 10px);
   height: 622px;
-  flex-grow: 1;
 }
 
 .center-right {
-  flex-basis: 50%;
+  flex-basis: calc(50% + 10px);
   height: 622px;
-  flex-grow: 1;
 }
 
-.Rectangle-left {
-  width: 430px;
+.content-left {
+  width: calc(430px - 10px);;
   height: 622px;
   display: block;
-  margin: auto;
   margin-top: 0px;
-  position: relative;
 }
 
-.Rectangle-7 {
+.small-logo {
   display: block;
-  margin-top: 0px;
   padding-top: 30px;
-  margin-left: 30px;
+  margin-left: calc(50% - 130px - 50px);
   width: 50px;
   height: 50px;
 }
 
-.-e-mail {
+.entry-group-text {
   width: 82px;
   height: 15px;
   font-family: 'Fira Sans', sans-serif;
@@ -178,30 +181,12 @@ export default {
   text-align: left;
   color: #999999;
   margin-top: -40px;
-  margin-left: 90px;
 }
 
-.imickaagmailcom {
+.entry-group {
+  margin: auto;
   width: 260px;
-  height: 21px;
-  border-style: hidden;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
-  letter-spacing: 0.5px;
-  text-align: left;
-  color: #3c3c3c;
-  margin-top: 133px;
-  margin-left: 90px;
-}
-
-.pass {
-  margin-top: 54px;
-}
-
-.imickaagmailcom:focus {
-  letter-spacing: normal;
-  outline: none;
+  position: relative;
 }
 
 input:focus~div {
@@ -213,15 +198,54 @@ input:focus~p {
 }
 
 
-.Rectangle-2 {
+.entry-group-line {
   width: 260px;
   height: 2px;
   background-color: #cccccc;
-  margin-left: 90px;
+}
+.entry-group-input {
+  width: 260px;
+  height: 21px;
+  border-style: hidden;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #3c3c3c;
+  margin-top: 133px;
+}
+.entry-group-input:focus {
+  letter-spacing: normal;
+  outline: none;
 }
 
+.pass {
+  margin-top: 54px;
+}
 
-.Rectangle-2-Copy {
+.button-small {
+  width: 41px;
+  height: 15px;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 10px;
+  line-height: 1.5;
+  text-align: left;
+  color: #999999;
+  background-color: inherit;
+  border: none;
+  position: absolute;
+  bottom: -20px;
+  right: 10px;
+}
+
+.underside {
+  width: 260px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.underside-button-big {
   width: 260px;
   height: 40px;
   border-radius: 100px;
@@ -234,12 +258,10 @@ input:focus~p {
   letter-spacing: 2px;
   text-align: center;
   color: #ffffff;
-  margin-left: 90px;
-  margin-top: 40px;
 }
 
 
-.layer {
+.underside-link {
   width: 144px;
   height: 21px;
   font-family: 'Fira Sans', sans-serif;
@@ -254,22 +276,7 @@ input:focus~p {
   margin-top: 37px;
 }
 
-.layer-small {
-  width: 41px;
-  height: 15px;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 10px;
-  line-height: 1.5;
-  text-align: left;
-  color: #999999;
-  background-color: inherit;
-  border: none;
-  position: absolute;
-  top: 280px;
-  left: 294px;
-}
-
-.-Azur- {
+.underside-Azur {
   width: 214px;
   height: 15px;
   font-family: 'Fira Sans', sans-serif;
@@ -279,28 +286,26 @@ input:focus~p {
   color: #3088f4;
   display: block;
   margin: auto;
-  bottom: 20px;
-  margin-top: 155px;
+  margin-top: 177px;
 }
 
-.-Azur- span {
+.underside-Azur span {
   font-size: 10px;
   line-height: 1.5;
   color: #999999;
 }
 
-.Rectangle {
-  width: 430px;
+.content-right {
+  width: calc(430px + 10px);;
   height: 622px;
   border-radius: 10px;
   background-image: linear-gradient(325deg, #30e8bd, #3088f4);
   display: block;
   margin: auto;
   margin-top: 0px;
-
 }
 
-.big_logo_singin {
+.big-logo {
   display: block;
   margin: auto;
   margin-top: 60px;
@@ -308,16 +313,16 @@ input:focus~p {
   height: 260px;
 }
 
-.big_logo_singin img {
-  object-fit: contain;
-}
+/*.big-logo img {*/
+  /*object-fit: contain;*/
+/*}*/
 
 
-.-A {
-  display:block;
+.topping-Azur {
+  display: block;
   width: 316px;
   height: 108px;
-  margin-left: 25px;
+  margin-left: calc(50% - 130px - 40px);
   margin-top: 0px;
   margin-bottom: 0px;
   padding-top: 25px;
@@ -328,15 +333,17 @@ input:focus~p {
   text-align: left;
   color: #ffffff;
 }
-.-A-azur {
-font-weight: bold;
+
+.topping-Azur span {
+  font-weight: bold;
 }
 
-.-B {
+.topping-text {
   display: block;
-  margin-left: 25px;
+  margin: auto;
   margin-top: 10px;
   margin-bottom: 0px;
+  margin-left: calc(50% - 130px - 40px);
   width: 345px;
   height: 21px;
   font-family: 'Fira Sans', sans-serif;
@@ -344,5 +351,12 @@ font-weight: bold;
   line-height: 1.31;
   text-align: left;
   color: #ffffff;
+}
+
+.radius-remove {
+  width: 10px;
+  height: 622px;
+  background-color: #fff;
+  margin-top: -622px;
 }
 </style>

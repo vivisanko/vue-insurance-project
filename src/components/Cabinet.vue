@@ -3,7 +3,7 @@
   <div class="main-base">
     <div v-for="item in insuranceTypes" v-bind:key="item._id" v-bind:item="item" v-bind:class="[{selected : selected == 'item'}, usual]" v-on:click="selected = item">
       <img v-bind:src=" item.img " />
-      <p class='layer'>{{ item.title }}</p>
+      <p class='caption'>{{ item.title }}</p>
       <p>{{ item.description }}</p>
     </div>
   </div>
@@ -15,8 +15,8 @@
 export default {
   data() {
     return {
-      selected: 'Rectangle-13-active',
-      usual: 'Rectangle-13',
+      selected: 'border-type-active',
+      usual: 'border-type-usual',
       insuranceTypes: []
     }
   },
@@ -59,7 +59,7 @@ export default {
 
 <style scoped>
 .main-base {
-  width: 95vw;
+  width: 100%;
   min-height: 90vh;
   display: flex;
   flex-direction: row;
@@ -69,7 +69,7 @@ export default {
   flex-wrap: wrap;
 }
 
-.Rectangle-13 {
+.border-type-usual {
   width: 160px;
   height: 192px;
   border-radius: 10px;
@@ -80,7 +80,7 @@ export default {
   transition: all 0.5s ease-out 0.5s;
 }
 
-.Rectangle-13-active {
+.border-type-active {
   width: 160px;
   height: 192px;
   border-radius: 10px;
@@ -91,7 +91,7 @@ export default {
   transition: all 0.5s ease-out 0.5s;
 }
 
-.Rectangle-13:hover>img {
+.border-type-usual:hover>img {
   transform: scale(1.2);
 }
 
@@ -102,7 +102,7 @@ img {
   transform-origin: 50% 100%;
 }
 
-p.layer {
+p.caption {
   display: inline-block;
   width: auto;
   height: 21px;
