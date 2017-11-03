@@ -361,16 +361,18 @@ input:focus~p {
 }
 
 @media screen and (max-width: 859px) {
+  .main {
+    background-color: rgba(24, 68, 122, 0.5);
+    padding-top: 100px;
+
+  }
+
   .header {
     display: none;
   }
-  .center {
-    background-color: rgba(24, 68, 122, 0.5);
-  }
   .center-left {
-    padding: 0px 10px 30px;
     width: 100%;
-      background-color: rgba(24, 68, 122, 0.5);
+
   }
   .content-left {
     width: 100%;
@@ -383,8 +385,6 @@ input:focus~p {
   .center-right {
     height: 140px;
     width: 100%;
-    padding: 100px 10px 0px;
-    background-color: rgba(24, 68, 122, 0.5);
   }
   .content-right {
     width: 100%;
@@ -396,16 +396,16 @@ input:focus~p {
     padding: 10px 0;
     margin: auto;
     margin-top: -10px;
-      }
+  }
   .topping-Azur {
     margin-left: calc(50% - 130px + 70px);
     width: 176px;
     height: 72px;
     font-size: 20px;
   }
-    .topping-Azur span {
-      font-size: 24px;
-    }
+  .topping-Azur span {
+    font-size: 24px;
+  }
   .topping-text {
     width: 259px;
     height: 18px;
@@ -418,7 +418,6 @@ input:focus~p {
     height: 70px;
     margin-top: -95px;
     margin-left: calc(50% - 130px);
-
   }
   .big-logo svg {
     width: 70px;
