@@ -113,14 +113,9 @@ export default {
 </script>
 
 <style scoped>
-@media (min-width:320px) and (max-width:580px) {
-
-}
-
-
 .main {
   margin: 0px;
-  min-height: 809px;
+  height: 809px;
   display: flex;
   flex-basis: 100%;
   flex-direction: column;
@@ -149,18 +144,22 @@ export default {
 
 .center-left {
   flex-basis: calc(50% - 10px);
+  flex-grow: 5;
   height: 622px;
 }
 
 .center-right {
   flex-basis: calc(50% + 10px);
+  flex-grow: 1;
   height: 622px;
 }
 
 .content-left {
-  width: calc(430px - 10px);;
+  width: calc(430px - 10px);
+  ;
   height: 622px;
   display: block;
+  margin: auto;
   margin-top: 0px;
 }
 
@@ -197,12 +196,12 @@ input:focus~p {
   color: #3088f4;
 }
 
-
 .entry-group-line {
   width: 260px;
   height: 2px;
   background-color: #cccccc;
 }
+
 .entry-group-input {
   width: 260px;
   height: 21px;
@@ -215,6 +214,7 @@ input:focus~p {
   color: #3c3c3c;
   margin-top: 133px;
 }
+
 .entry-group-input:focus {
   letter-spacing: normal;
   outline: none;
@@ -260,7 +260,6 @@ input:focus~p {
   color: #ffffff;
 }
 
-
 .underside-link {
   width: 144px;
   height: 21px;
@@ -296,7 +295,7 @@ input:focus~p {
 }
 
 .content-right {
-  width: calc(430px + 10px);;
+  width: calc(430px + 10px);
   height: 622px;
   border-radius: 10px;
   background-image: linear-gradient(325deg, #30e8bd, #3088f4);
@@ -314,9 +313,10 @@ input:focus~p {
 }
 
 /*.big-logo img {*/
-  /*object-fit: contain;*/
-/*}*/
 
+/*object-fit: contain;*/
+
+/*}*/
 
 .topping-Azur {
   display: block;
@@ -358,5 +358,71 @@ input:focus~p {
   height: 622px;
   background-color: #fff;
   margin-top: -622px;
+}
+
+@media screen and (max-width: 859px) {
+  .header {
+    display: none;
+  }
+  .center {
+    background-color: rgba(24, 68, 122, 0.5);
+  }
+  .center-left {
+    padding: 0px 10px 30px;
+    width: 100%;
+      background-color: rgba(24, 68, 122, 0.5);
+  }
+  .content-left {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  .small-logo {
+    display: none;
+  }
+  .center-right {
+    height: 140px;
+    width: 100%;
+    padding: 100px 10px 0px;
+    background-color: rgba(24, 68, 122, 0.5);
+  }
+  .content-right {
+    width: 100%;
+    height: 100%;
+  }
+  .radius-remove {
+    height: 20px;
+    width: 100%;
+    padding: 10px 0;
+    margin: auto;
+    margin-top: -10px;
+      }
+  .topping-Azur {
+    margin-left: calc(50% - 130px + 70px);
+    width: 176px;
+    height: 72px;
+    font-size: 20px;
+  }
+    .topping-Azur span {
+      font-size: 24px;
+    }
+  .topping-text {
+    width: 259px;
+    height: 18px;
+    font-size: 12px;
+    margin: auto;
+  }
+  .big-logo {
+    display: block;
+    width: 70px;
+    height: 70px;
+    margin-top: -95px;
+    margin-left: calc(50% - 130px);
+
+  }
+  .big-logo svg {
+    width: 70px;
+    height: 70px;
+  }
 }
 </style>
