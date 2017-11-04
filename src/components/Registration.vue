@@ -211,7 +211,7 @@ export default {
 }
 
 .entry-group {
-  margin-top: 48px !important;
+  padding-top: 48px !important;
   margin: auto;
   width: 260px;
   height: 46px;
@@ -250,7 +250,7 @@ input:focus~p {
 }
 
 .pass {
-  margin-top: 8px !important;
+  padding-top: 8px !important;
 }
 
 .underside {
@@ -299,7 +299,7 @@ input:focus~p {
   color: #3088f4;
   display: block;
   margin: auto;
-  margin-top: 83px;
+  margin-top: 90px;
 }
 
 .underside-Azur span {
@@ -378,7 +378,7 @@ input:focus~p {
   .main {
     background-color: rgba(24, 68, 122, 0.5);
     padding-top: 100px;
-    padding-bottom: 30px;
+    min-height: 100vh;
   }
 
   .header {
@@ -386,16 +386,30 @@ input:focus~p {
   }
   .center-left {
     width: 100%;
-
+    height: 500px;
   }
   .content-left {
     width: 100%;
+    height: 100%;
     background-color: #fff;
     border-radius: 10px;
   }
   .small-logo {
     display: none;
   }
+  .entry-group {
+    width: 90%;
+  }
+  .entry-group-line {
+    width: 100%;
+  }
+  .entry-group-input {
+    width: 100%;
+  }
+  .underside-Azur {
+    margin-top: 40px;
+  }
+
   .center-right {
     height: 140px;
     width: 100%;

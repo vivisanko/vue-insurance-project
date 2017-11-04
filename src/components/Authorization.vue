@@ -27,8 +27,8 @@
             <div class="entry-group-line"></div>
             <p class="entry-group-text">Логин или e-mail</p>
           </div>
-          <div class='entry-group'>
-            <input class='entry-group-input pass' v-model="password" />
+          <div class='entry-group pass'>
+            <input class='entry-group-input' v-model="password" />
             <div class="entry-group-line"></div>
             <p class="entry-group-text">Пароль</p>
             <button class="button-small">Забыли?</button>
@@ -156,7 +156,6 @@ export default {
 
 .content-left {
   width: calc(430px - 10px);
-  ;
   height: 622px;
   display: block;
   margin: auto;
@@ -183,8 +182,10 @@ export default {
 }
 
 .entry-group {
+  padding-top: 115px !important;
   margin: auto;
   width: 260px;
+  height: 56px;
   position: relative;
 }
 
@@ -212,8 +213,7 @@ input:focus~p {
   letter-spacing: 0.5px;
   text-align: left;
   color: #3c3c3c;
-  margin-top: 133px;
-}
+  }
 
 .entry-group-input:focus {
   letter-spacing: normal;
@@ -221,7 +221,7 @@ input:focus~p {
 }
 
 .pass {
-  margin-top: 54px;
+  padding-top: 8px !important;
 }
 
 .button-small {
@@ -235,14 +235,14 @@ input:focus~p {
   background-color: inherit;
   border: none;
   position: absolute;
-  bottom: -20px;
+  bottom: 35px;
   right: 10px;
 }
 
 .underside {
   width: 260px;
   margin: auto;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 .underside-button-big {
@@ -285,7 +285,7 @@ input:focus~p {
   color: #3088f4;
   display: block;
   margin: auto;
-  margin-top: 177px;
+  margin-top: 159px;
 }
 
 .underside-Azur span {
@@ -364,24 +364,42 @@ input:focus~p {
   .main {
     background-color: rgba(24, 68, 122, 0.5);
     padding-top: 100px;
-    padding-bottom: 30px;
+    min-height: 100vh;
   }
 
   .header {
     display: none;
   }
+  .center {
+    min-height: 418px;
+  }
   .center-left {
     width: 100%;
-
+    height: 418px;
   }
   .content-left {
     width: 100%;
+    height: 100%;
     background-color: #fff;
     border-radius: 10px;
   }
   .small-logo {
     display: none;
   }
+  .entry-group {
+    width: 90%;
+  }
+
+  .entry-group-line {
+    width: 100%;
+  }
+  .entry-group-input {
+    width: 100%;
+  }
+  .underside-Azur {
+    margin-top: 40px;
+  }
+
   .center-right {
     height: 140px;
     width: 100%;
