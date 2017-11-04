@@ -104,20 +104,13 @@ export default {
     makeVerification: function() {
       if (this.logon.length < 1 || this.passwordOriginal.length < 1 || this.password.length < 1 || this.phone.length < 1 || this.email.length < 1) {
         this.message = "ВНИМАНИЕ: Для регистрации заполните все поля формы"
-      } else if (this.passwordOriginal.length != this.password.length) {
-        this.message = "ВНИМАНИЕ: При вводе пароля вы допустили ошибку"
+        this.verification = false
       } else {
-        var a = true
-        for (var i = 0; i < this.password.length; i++) {
-          if (this.password[i] != this.passwordOriginal[i]) {
-            this.message = "ВНИМАНИЕ: При вводе пароля вы допустили ошибку "
-            a = false
-            break
-          }
-        }
-        if (a) {
-          this.message = ""
-          this.verification = true
+        this.verification = true
+        this.message = ""
+        if (this.password != this.passwordOriginal) {
+          this.message = "ВНИМАНИЕ: При вводе пароля вы допустили ошибку "
+          this.verification = false
         }
       }
 
