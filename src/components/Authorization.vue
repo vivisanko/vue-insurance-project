@@ -364,7 +364,7 @@ input:focus~p {
   .main {
     background-color: rgba(24, 68, 122, 0.5);
     padding-top: 100px;
-
+    padding-bottom: 30px;
   }
 
   .header {
