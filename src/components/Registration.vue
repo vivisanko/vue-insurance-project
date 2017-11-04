@@ -47,6 +47,7 @@
             <div class="entry-group-line"></div>
             <p class="entry-group-text">Введите ваш e-mail</p>
           </div>
+          <div class="mistake">{{ message }}</div>
           <div class="underside">
             <button class="underside-button-big" v-on:click="doRegistration">Регистрация</button>
             <router-link class="underside-link" to="/authorization">У меня есть аккаунт</router-link>
@@ -94,11 +95,38 @@ export default {
       password: 'zzzzzz',
       phone: '+375 (29) 111111',
       email: 'anonim@gmail.com',
+      message: '',
+      verification: false,
     }
 
   },
   methods: {
+    makeVerification: function() {
+      if (this.logon.length < 1 || this.passwordOriginal.length < 1 || this.password.length < 1 || this.phone.length < 1 || this.email.length < 1) {
+        this.message = "ВНИМАНИЕ: Для регистрации заполните все поля формы"
+      } else if (this.passwordOriginal.length != this.password.length) {
+        this.message = "ВНИМАНИЕ: При вводе пароля вы допустили ошибку"
+      } else {
+        var a = true
+        for (var i = 0; i < this.password.length; i++) {
+          if (this.password[i] != this.passwordOriginal[i]) {
+            this.message = "ВНИМАНИЕ: При вводе пароля вы допустили ошибку "
+            a = false
+            break
+          }
+        }
+        if (a) {
+          this.message = ""
+          this.verification = true
+        }
+      }
+
+    },
     doRegistration: function() {
+      this.makeVerification()
+      if (!this.verification) {
+        return
+      }
       var vm = this
       var parsel = JSON.stringify({
         email: this.email,
@@ -111,7 +139,7 @@ export default {
           headers: {
             "Content-Type": "application/json"
           },
-          body: parsel
+          body: parselho
 
         })
         .then(function(response) {
@@ -214,7 +242,7 @@ export default {
   padding-top: 48px !important;
   margin: auto;
   width: 260px;
-  height: 46px;
+  height: 40px;
   position: relative;
 }
 
@@ -250,13 +278,25 @@ input:focus~p {
 }
 
 .pass {
-  padding-top: 8px !important;
+  padding-top: 14px !important;
+}
+
+.mistake {
+  width: 100%;
+  height: 24px;
+  display: block;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 10px;
+  font-style: italic;
+  font-weight: 500;
+  text-align: center;
+  color: red;
 }
 
 .underside {
   width: 260px;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .underside-button-big {
@@ -383,6 +423,11 @@ input:focus~p {
 
   .header {
     display: none;
+  }
+  .center {
+    margin: 0px;
+    padding: 0px;
+    min-height: 640px;
   }
   .center-left {
     width: 100%;
