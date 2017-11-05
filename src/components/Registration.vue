@@ -90,11 +90,11 @@
 export default {
   data() {
     return {
-      logon: 'anonim',
-      passwordOriginal: 'zzzzzz',
-      password: 'zzzzzz',
-      phone: '+375 (29) 111111',
-      email: 'anonim@gmail.com',
+      logon: '',
+      passwordOriginal: '',
+      password: '',
+      phone: '+375 (XX) XXXXXX',
+      email: '',
       message: '',
       verification: false,
     }
