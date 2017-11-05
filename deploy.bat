@@ -1,9 +1,9 @@
 call npm run build
-git add .
-git commit -m "dist"
-git push origin master
-git checkout gh-pages
-git checkout master dist
-git commit -m "update dist"
-git push origin gh-pages
-git checkout master
+call git add .
+call git commit -m "dist"
+call git push origin master
+call git checkout gh-pages
+call git checkout master dist
+call git commit -m "update dist"
+call git push origin gh-pages
+call git checkout master
