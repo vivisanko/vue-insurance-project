@@ -360,7 +360,7 @@ input:focus~p {
   margin-top: -622px;
 }
 
-@media screen and (max-width: 859px) {
+@media screen and (max-width: 880px) {
   .main {
     background-color: rgba(24, 68, 122, 0.5);
     padding-top: 100px;
