@@ -165,7 +165,8 @@ export default {
 <style scoped>
 .main {
   margin: 0px;
-  height: 809px;
+  height: 768px;
+  width: 100%;
   display: flex;
   flex-basis: 100%;
   flex-direction: column;
@@ -174,7 +175,7 @@ export default {
 }
 
 .header {
-  width: 100vw;
+  width: 100%;
   margin: 0px;
   height: 108px;
   background-color: rgba(24, 68, 122, 0.5);
@@ -412,6 +413,7 @@ input:focus~p {
     background-color: rgba(24, 68, 122, 0.5);
     padding-top: 100px;
     min-height: 100vh;
+    width: 100%;
   }
 
   .header {

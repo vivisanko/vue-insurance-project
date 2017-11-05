@@ -115,7 +115,9 @@ export default {
 <style scoped>
 .main {
   margin: 0px;
-  height: 809px;
+  height: 768px;
+  width: 100%;
+  object-fit: contain;
   display: flex;
   flex-basis: 100%;
   flex-direction: column;
@@ -124,7 +126,7 @@ export default {
 }
 
 .header {
-  width: 100vw;
+  width: 100%;
   margin: 0px;
   height: 108px;
   background-color: rgba(24, 68, 122, 0.5);
@@ -132,7 +134,7 @@ export default {
 
 .center {
   max-width: 860px;
-  min-height: 622px;
+  max-height: 622px;
   border-radius: 10px;
   background-color: #ffffff;
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.4);
@@ -145,13 +147,13 @@ export default {
 .center-left {
   flex-basis: calc(50% - 10px);
   flex-grow: 5;
-  height: 622px;
+  height: 100%;
 }
 
 .center-right {
   flex-basis: calc(50% + 10px);
   flex-grow: 1;
-  height: 622px;
+  height: 100%;
 }
 
 .content-left {
@@ -213,7 +215,7 @@ input:focus~p {
   letter-spacing: 0.5px;
   text-align: left;
   color: #3c3c3c;
-  }
+}
 
 .entry-group-input:focus {
   letter-spacing: normal;
@@ -365,6 +367,7 @@ input:focus~p {
     background-color: rgba(24, 68, 122, 0.5);
     padding-top: 100px;
     min-height: 100vh;
+    width: 100%;
   }
 
   .header {
