@@ -1,5 +1,5 @@
 npm run build
-git add dist
+git add .
 git commit -m "dist"
 git push origin master
 git checkout gh-pages
